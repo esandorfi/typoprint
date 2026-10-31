@@ -26,7 +26,7 @@ uv sync --locked
 uv run typoprint --help
 ```
 
-Documentation: <https://esandorfi.github.io/typoprint/>. Contributions are welcome;
+Documentation: <https://esandorfi.github.io/typoprint/> (Python API in `docs/python.md`). Contributions are welcome;
 see [CONTRIBUTING.md](CONTRIBUTING.md). Releases are published by maintainers; see
 [releasing](docs/releasing.md).
 

@@ -17,6 +17,7 @@ nav:
   - Home: README.md
   - Install: install.md
   - Use:
+      - Python API: python.md
       - Command line: cli.md
   - Extend:
       - Templates and content rules: extensions.md
