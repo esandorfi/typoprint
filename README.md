@@ -4,6 +4,10 @@
 
 Write in Markdown. Print like a publisher.
 
+[![CI](https://github.com/esandorfi/typoprint/actions/workflows/check.yml/badge.svg)](https://github.com/esandorfi/typoprint/actions/workflows/check.yml)
+[![Docs](https://img.shields.io/badge/docs-esandorfi.github.io-blue)](https://esandorfi.github.io/typoprint/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Typoprint is a small Python library and CLI for offline Markdown printing, powered by
 Typst. Use it in a terminal, API, worker, or script. No browser, TeX installation,
 external compiler process, or network connection is needed to render.
@@ -220,3 +224,10 @@ uv build
 [Verification](docs/verification.md) describes clean-wheel and offline checks.
 MIT covers first-party code. Bundled packages and fonts retain their own licenses;
 see [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## Authors and maintainers
+
+Created and maintained by [Emmanuel Sandorfi](https://github.com/esandorfi), with
+help from [contributors](https://github.com/esandorfi/typoprint/graphs/contributors).
+Issues and pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[security policy](SECURITY.md).

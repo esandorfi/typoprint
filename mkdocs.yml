@@ -3,6 +3,7 @@ site_description: "Markdown in. Beautiful PDFs out. Offline Markdown-to-PDF prin
 site_url: https://esandorfi.github.io/typoprint/
 repo_url: https://github.com/esandorfi/typoprint
 repo_name: esandorfi/typoprint
+copyright: "MIT licensed. Copyright © 2026 Emmanuel Sandorfi and Typoprint contributors."
 edit_uri: edit/main/docs/
 strict: true
 
