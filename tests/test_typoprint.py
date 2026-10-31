@@ -47,7 +47,7 @@ class TemporaryCase(unittest.TestCase):
     def setUp(self):
         temporary = TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
-        self.root = Path(temporary.name)
+        self.root = Path(temporary.name).resolve()
 
     def write(self, name, text):
         path = self.root / name

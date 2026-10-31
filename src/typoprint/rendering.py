@@ -216,6 +216,7 @@ def _snapshot_assets(document: Document, source_root: Path, destination: Path) -
             references = json.loads(compiler.query("<typoprint-asset>", field="value"))
         except typst.TypstError as error:
             raise RenderError(_diagnostic(error)) from error
+    destination = destination.resolve()
     staged: set[Path] = set()
     for reference in references:
         source = reference["source"]
