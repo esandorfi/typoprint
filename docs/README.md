@@ -7,7 +7,11 @@ subtitle: Markdown in. Beautiful PDFs out.
 
 Typoprint prints Markdown offline through a Python library and CLI. Its reusable
 Typst templates support editorial documents and compact reports. Start with the
-repository README for installation and Python examples.
+repository README for Python examples.
+
+## Start
+
+- [Install](install.md)
 
 ## Use
 
@@ -20,3 +24,4 @@ repository README for installation and Python examples.
 ## Verify
 
 - [Development and package verification](verification.md)
+- [Releasing](releasing.md)

@@ -12,26 +12,23 @@ outside the tested wheel platforms.
 
 ## Install
 
-From this checkout:
+From PyPI:
+
+```bash
+uv tool install typoprint   # CLI in its own environment (or: pipx install typoprint)
+pip install typoprint       # library in the current environment (or: uv add typoprint)
+```
+
+From a checkout:
 
 ```bash
 uv sync --locked
 uv run typoprint --help
 ```
 
-To install the CLI independently:
-
-```bash
-uv tool install .
-```
-
-To install a built wheel into another Python project:
-
-```bash
-uv add /path/to/typoprint-0.1.0-py3-none-any.whl
-```
-
-This repository prepares local artifacts; it does not publish to a package registry.
+Documentation: <https://esandorfi.github.io/typoprint/>. Contributions are welcome;
+see [CONTRIBUTING.md](CONTRIBUTING.md). Releases are published by maintainers; see
+[releasing](docs/releasing.md).
 
 ## CLI
 

@@ -1,0 +1,31 @@
+site_name: Typoprint
+site_description: Offline Markdown-to-PDF printing with Python, a CLI, and Typst layouts
+site_url: https://esandorfi.github.io/typoprint/
+repo_url: https://github.com/esandorfi/typoprint
+repo_name: esandorfi/typoprint
+edit_uri: edit/main/docs/
+strict: true
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.code.copy
+    - content.action.edit
+
+nav:
+  - Home: README.md
+  - Install: install.md
+  - Use:
+      - Command line: cli.md
+  - Extend:
+      - Templates and content rules: extensions.md
+  - Project:
+      - Verification: verification.md
+      - Releasing: releasing.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true

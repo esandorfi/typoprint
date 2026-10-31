@@ -10,7 +10,28 @@ readme = "README.md"
 requires-python = ">=3.13"
 license = "MIT"
 license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{ name = "Emmanuel Sandorfi" }]
+keywords = ["markdown", "pdf", "typst", "typesetting", "mermaid", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Printing",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Typing :: Typed",
+]
 dependencies = ["typst==0.15.0", "pydantic>=2.12,<3"]
+
+[project.urls]
+Homepage = "https://github.com/esandorfi/typoprint"
+Documentation = "https://esandorfi.github.io/typoprint/"
+Source = "https://github.com/esandorfi/typoprint"
+Issues = "https://github.com/esandorfi/typoprint/issues"
+Changelog = "https://github.com/esandorfi/typoprint/blob/main/CHANGELOG.md"
 
 [project.scripts]
 typoprint = "typoprint.cli:main"
@@ -23,6 +44,7 @@ typoprint = ["py.typed", "resources/**/*"]
 
 [dependency-groups]
 dev = ["build>=1.2", "pytest>=8", "ruff>=0.14", "ty>=0.0.89", "pypdf>=6"]
+docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.6"]
 
 [tool.ruff]
 target-version = "py313"
