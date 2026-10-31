@@ -5,14 +5,12 @@ Typoprint's library and [CLI](cli.md) share one rendering pipeline. Install with
 from the top-level package:
 
 ```python
-from typoprint import (
-    Chapter, Document, Settings,                       # inputs
-    render, render_files, plan_files, write_pdf,       # actions
-    load_settings,                                     # configuration
-    PrintPlan, PlannedFile, RenderResult,              # results
-    Transform, Validator,                              # callback types
-    TypoprintError, ConfigurationError, RenderError, RuleError,  # errors
-)
+from typoprint import Chapter, Document, Settings  # inputs
+from typoprint import render, render_files, plan_files, write_pdf  # actions
+from typoprint import load_settings  # configuration
+from typoprint import PrintPlan, PlannedFile, RenderResult  # results
+from typoprint import Transform, Validator  # callback types
+from typoprint import TypoprintError, ConfigurationError, RenderError, RuleError
 ```
 
 Calls are synchronous, offline, and isolated: each call owns its compiler and
@@ -59,12 +57,12 @@ result = render(
 ```python
 from typoprint import Settings, render_files, write_pdf
 
-result = render_files(["notes.md"])                          # one file
-result = render_files(["intro.md", "usage.md", "faq.md"])    # chosen order
-result = render_files(["docs"], recursive=True)              # a folder tree
-result = render_files(["docs"], recursive=True, by_folder=True)   # parts per folder
+result = render_files(["notes.md"])  # one file
+result = render_files(["intro.md", "usage.md", "faq.md"])  # chosen order
+result = render_files(["docs"], recursive=True)  # a folder tree
+result = render_files(["docs"], recursive=True, by_folder=True)  # parts per folder
 result = render_files(["docs"], recursive=True, exclude=["drafts", "*/internal"])
-result = render_files(order="docs/CONTENTS.md", strict=True)      # contents map
+result = render_files(order="docs/CONTENTS.md", strict=True)  # contents map
 result = render_files(
     ["docs"], recursive=True, settings=Settings(template="report", lang="en")
 )
@@ -166,8 +164,8 @@ the TOML belong to the TOML file's folder. Unknown keys and presets raise
 ```python
 from typoprint import Settings, load_settings, render
 
-settings = load_settings("typoprint.toml")                      # [defaults] only
-settings = load_settings("typoprint.toml", preset="handbook")   # plus a preset
+settings = load_settings("typoprint.toml")  # [defaults] only
+settings = load_settings("typoprint.toml", preset="handbook")  # plus a preset
 result = render("# Introduction", settings=settings, overrides=Settings(cover=False))
 ```
 
@@ -182,7 +180,7 @@ from typoprint import Settings, render
 result = render(
     "# Custom",
     settings=Settings(
-        template="./my-template",                      # directory with template.typ
+        template="./my-template",  # directory with template.typ
         template_options={"accent": "#165d8d", "banner": True},
         font_paths=("./fonts",),
     ),
@@ -224,8 +222,8 @@ are trusted developer code.
 from pathlib import Path
 from typoprint import write_pdf
 
-path = write_pdf(result, "build/out.pdf")      # returns the resolved Path
-Path("build/out.pdf").read_bytes()[:5]         # b'%PDF-'
+path = write_pdf(result, "build/out.pdf")  # returns the resolved Path
+Path("build/out.pdf").read_bytes()[:5]  # b'%PDF-'
 ```
 
 `write_pdf` flushes a complete PDF to a temporary file then replaces the destination

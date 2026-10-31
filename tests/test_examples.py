@@ -4,10 +4,15 @@ import json
 import subprocess
 import sys
 import unittest
+from io import BytesIO
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
+
+from pypdf import PdfReader
+
+from typoprint import Settings, render
 
 EXAMPLES = Path(__file__).resolve().parents[1] / "examples"
 
@@ -75,3 +80,28 @@ class ExampleTests(unittest.TestCase):
                     .startswith(b"%PDF-")
                 )
             self.assertEqual(before, [source.read_bytes() for source in sources])
+
+
+class TemplateGalleryTests(unittest.TestCase):
+    def test_gallery_templates_render_with_their_options(self):
+
+        markdown = "---\ntitle: Gallery\nauthor: Ada\n---\n# One\n\nHello.\n"
+        expected = {
+            "confidential": ("DRAFT", {"label": "DRAFT"}),
+            "memo": ("Gallery", {}),
+            "branded": ("Acme Inc", {"company": "Acme Inc", "accent": "#0b6e4f"}),
+        }
+        for name, (needle, options) in expected.items():
+            with self.subTest(template=name):
+                result = render(
+                    markdown,
+                    settings=Settings(
+                        template=str(EXAMPLES / "templates" / name),
+                        cover=True,
+                        template_options=options,
+                    ),
+                )
+                reader = PdfReader(BytesIO(result.content))
+                text = "".join(page.extract_text() for page in reader.pages)
+                self.assertIn(needle, text)
+                self.assertEqual(result.warnings, ())
