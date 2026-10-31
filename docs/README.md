@@ -5,7 +5,9 @@ subtitle: Markdown in. Beautiful PDFs out.
 
 # Typoprint handbook
 
-**Write in Markdown. Print like a publisher.**
+**Markdown in. Beautiful PDFs out.**
+
+Write in Markdown. Print like a publisher.
 
 Typoprint turns plain Markdown into polished, reproducible PDFs. It runs fully
 offline from a Python library or a one-line CLI, with book-style and compact

@@ -1,5 +1,5 @@
 site_name: Typoprint
-site_description: Offline Markdown-to-PDF printing with Python, a CLI, and Typst layouts
+site_description: "Markdown in. Beautiful PDFs out. Offline Markdown-to-PDF printing with Python, a CLI, and Typst layouts."
 site_url: https://esandorfi.github.io/typoprint/
 repo_url: https://github.com/esandorfi/typoprint
 repo_name: esandorfi/typoprint

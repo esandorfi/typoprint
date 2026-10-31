@@ -29,7 +29,12 @@ from typoprint.rendering import (
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="typoprint",
-        description="Print Markdown to PDF offline with Typst.",
+        description=(
+            "Markdown in. Beautiful PDFs out.\n"
+            "Write in Markdown. Print like a publisher.\n\n"
+            "Prints Markdown to PDF offline with Typst."
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument(
         "paths", nargs="*", help="Markdown files or folders; '-' reads UTF-8 stdin"

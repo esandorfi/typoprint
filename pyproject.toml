@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "typoprint"
 version = "0.1.0"
-description = "Offline Markdown-to-PDF printing, with Python, CLI, and extensible Typst layouts"
+description = "Markdown in. Beautiful PDFs out. Offline Markdown-to-PDF printing with Python, a CLI, and Typst layouts"
 readme = "README.md"
 requires-python = ">=3.13"
 license = "MIT"

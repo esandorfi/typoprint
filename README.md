@@ -2,6 +2,8 @@
 
 **Markdown in. Beautiful PDFs out.**
 
+Write in Markdown. Print like a publisher.
+
 Typoprint is a small Python library and CLI for offline Markdown printing, powered by
 Typst. Use it in a terminal, API, worker, or script. No browser, TeX installation,
 external compiler process, or network connection is needed to render.
