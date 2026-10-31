@@ -33,7 +33,7 @@ jobs:
           uv venv .cache/wheel-smoke
           uv pip install --python .cache/wheel-smoke/bin/python dist/*.whl
           .cache/wheel-smoke/bin/python tools/wheel_smoke.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist/
