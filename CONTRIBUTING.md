@@ -35,5 +35,7 @@ documentation in `docs/` when behavior changes, and add an entry under
   Python plugins from TOML.
 - Keep dependency and font licenses beside bundled assets.
 
+Please follow the [code of conduct](CODE_OF_CONDUCT.md).
+
 See [AGENTS.md](AGENTS.md) for the full contributor rules and
 [docs/releasing.md](docs/releasing.md) for how releases are made.

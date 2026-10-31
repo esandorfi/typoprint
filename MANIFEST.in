@@ -1,4 +1,4 @@
-include AGENTS.md CHANGELOG.md CONTRIBUTING.md SECURITY.md uv.lock mkdocs.yml
+include AGENTS.md CHANGELOG.md CONTRIBUTING.md SECURITY.md CODE_OF_CONDUCT.md uv.lock mkdocs.yml
 recursive-include .github/workflows *.yml
 recursive-include docs *.md
 recursive-include examples *.py *.typ *.svg
