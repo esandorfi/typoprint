@@ -1,0 +1,12 @@
+Source Sans 3, version 3.052R (unmodified static OpenType fonts)
+Upstream: https://github.com/adobe-fonts/source-sans/releases/tag/3.052R
+Files: https://github.com/adobe-fonts/source-sans/tree/3.052R/OTF
+Licence: SIL Open Font License 1.1; original copyright and licence in OFL.txt.
+Only Regular, Italic, Bold and Bold Italic are redistributed.
+
+SHA-256:
+SourceSans3-Regular.otf  08df266400933d3178d081a45f94a08814c3e55b4b7dd2e0ff69cb1329f13ab6
+SourceSans3-It.otf       430b9f0eb1170be0981706d14b6cf87122efba9d86c373bbdf69daf276421462
+SourceSans3-Bold.otf     7776ddb9f3eb58683e59f28d558d8896b768c2d0c80799fb3f1c56c54dfd98c9
+SourceSans3-BoldIt.otf   05e97d9adc01059607e97b167a68afb25680db904db7aba831dc2510f14b6515
+OFL.txt                 89ad2c4f66dd29127527493e729c31e731f111cf10faf5774c3db9275ed0c22c

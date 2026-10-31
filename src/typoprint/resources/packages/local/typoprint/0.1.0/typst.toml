@@ -1,0 +1,7 @@
+[package]
+name = "typoprint"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Typoprint contributors"]
+description = "Offline Markdown printing with reusable templates"
+compiler = "0.15.0"

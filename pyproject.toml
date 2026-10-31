@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "typoprint"
+version = "0.1.0"
+description = "Offline Markdown-to-PDF printing, with Python, CLI, and extensible Typst layouts"
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+dependencies = ["typst==0.15.0", "pydantic>=2.12,<3"]
+
+[project.scripts]
+typoprint = "typoprint.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+typoprint = ["py.typed", "resources/**/*"]
+
+[dependency-groups]
+dev = ["build>=1.2", "pytest>=8", "ruff>=0.14", "ty>=0.0.89", "pypdf>=6"]
+
+[tool.ruff]
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "PLC0415"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ty.src]
+include = ["src", "examples", "tools"]

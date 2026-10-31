@@ -1,0 +1,50 @@
+name: Check and package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.13", "3.14"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run --no-sync ruff format --check .
+      - run: uv run --no-sync ruff check .
+      - run: uv run --no-sync ty check
+      - run: uv run --no-sync pytest
+      - run: uv build
+      - name: Install and inspect a clean wheel
+        shell: bash
+        run: |
+          uv venv .cache/wheel-smoke
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            python_path=".cache/wheel-smoke/Scripts/python.exe"
+          else
+            python_path=".cache/wheel-smoke/bin/python"
+          fi
+          uv run --no-project --python "$python_path" --with pip python -m pip download --dest .cache/wheelhouse dist/*.whl
+          uv pip install --offline --no-index --find-links .cache/wheelhouse --python "$python_path" dist/*.whl
+          "$python_path" tools/wheel_smoke.py
+      - name: Verify Linux rendering with network disabled
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.13'
+        shell: bash
+        run: |
+          docker run --rm -v "$PWD:/work" python:3.13-slim \
+            sh -c 'python -m pip download --dest /work/.cache/linux-wheelhouse /work/dist/*.whl'
+          docker run --rm --network none -v "$PWD:/work:ro" python:3.13-slim sh -c \
+            'python -m venv /tmp/smoke && /tmp/smoke/bin/pip install --no-index --find-links /work/.cache/linux-wheelhouse /work/dist/*.whl && cd /tmp && /tmp/smoke/bin/python /work/tools/wheel_smoke.py'
